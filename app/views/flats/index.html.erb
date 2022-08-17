@@ -1,15 +1,15 @@
-<div class="container">
-<h1>All our Flats (<%= Flat.count %>)</h1>
+<div class="container w-75">
+  <h1 class="text-center">All our Flats (<%= Flat.count %>)</h1>
   <div class="row">
     <% @flats.each do |flat| %>
-    <div class="col">
+    <div class="col d-flex justify-content-center">
       <div class="card shadow" style="width: 18rem;">
         <img src="<%= flat.url_img %>" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"><%= flat.name %></h5>
           <p class="card-text"><%= flat.description %></p>
           <ul class="list-group-flush list-inline">
-            <li class="list-inline-item">$<%= flat.price_per_night %>/night</li>
+            <li class="list-inline-item"><i class="fa-solid fa-euro-sign"></i> <%= flat.price_per_night %>/night</li>
             <li class="list-inline-item"><i class="fa-solid fa-user-group"></i> <%= flat.number_of_guests %></li>
           </ul>
           <%= link_to "More info", flat_path(flat), class: "btn btn-primary"%>
