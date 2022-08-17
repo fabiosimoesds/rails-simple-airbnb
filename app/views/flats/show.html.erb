@@ -1,0 +1,17 @@
+<div class="w-auto" >
+  <img class="w-100" src=<%= @flat.url_img %> alt="" >
+</div>
+
+<div class="container mt-2">
+  <%= link_to '< See All Flats', flats_path, class: "btn btn-primary" %>
+  <%= link_to '<i class="fa-solid fa-pen-to-square"></i>'.html_safe, edit_flat_path(@flat), class: "" %>
+  <%= link_to '<i class="fa-solid fa-trash-can"></i>'.html_safe, flat_path(@flat), class: "text-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{@flat.name}"}%>
+  <div class="bg-light p-2 rounded border">
+    <h1><%= @flat.name %></h1>
+    <p><%= @flat.address %></p>
+    <p><%= @flat.description %></p>
+    <p>$<%= @flat.price_per_night %>/night</p>
+    <p><i class="fa-solid fa-user-group"></i> <%= @flat.number_of_guests %></p>
+  </div>
+
+</div>

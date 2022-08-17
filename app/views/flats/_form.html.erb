@@ -1,0 +1,18 @@
+
+<div class="container w-50 bg-light p-2 rounded border border-2">
+  <%= simple_form_for(@flat) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <div class="row">
+      <div class="col">
+        <%= f.input :price_per_night, class: "form-control"%>
+      </div>
+      <div class="col">
+        <%= f.input :number_of_guests, class: "form-control" %>
+      </div>
+    </div>
+    <%= f.input :url_img, label: "URL of the Image" %>
+    <%= f.button :submit, class:"btn btn-outline-secondary" %>
+  <% end %>
+</div>
